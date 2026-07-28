@@ -1,0 +1,28 @@
+# Produção — mesmo padrão das outras apps Konekto na VPS.
+# O Nginx Proxy Manager alcança este contêiner pelo nome na rede partilhada e
+# termina o TLS, encaminhando https://${DOMAIN} -> txuvukka-web:3000.
+#
+# Subir:  docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
+# Logs:   docker compose -f docker-compose.prod.yml logs -f
+#
+# Site de demonstração de cliente: sem SMTP nem base de dados — o formulário de
+# contacto abre o cliente de email do visitante, não precisa de backend.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: txuvukka-website:latest
+    container_name: txuvukka-web
+    restart: unless-stopped
+    environment:
+      TZ: Africa/Maputo
+    # Sem portas publicadas — o NPM faz proxy para txuvukka-web:3000 na rede partilhada.
+    networks: [npm-net]
+
+networks:
+  # Rede existente onde vive o Nginx Proxy Manager.
+  # Alterar via NPM_NETWORK no .env.prod se for diferente.
+  npm-net:
+    external: true
+    name: ${NPM_NETWORK:-nginx-proxy-manager_default}

@@ -1,0 +1,10 @@
+# Teste local da imagem de produção (servidor Node standalone).
+#   docker compose up -d --build   ->   http://localhost:3000
+services:
+  web:
+    build: .
+    image: txuvukka-website:latest
+    container_name: txuvukka-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
