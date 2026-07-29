@@ -28,10 +28,11 @@ export default function About() {
 
           <Reveal delay={120}>
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-smoke">
-              Trabalhamos com marcas em Moçambique e na região há quase uma
-              década — de negócios locais a instituições. Independentemente da
-              escala, o método é o mesmo: perceber o problema, definir a
-              direcção e executar com rigor até ao último ficheiro entregue.
+              Trabalhamos com marcas em Moçambique — de padarias e ginásios de
+              bairro a centros de saúde e associações empresariais.
+              Independentemente da escala, o método é o mesmo: perceber o
+              problema, definir a direcção e executar com rigor até ao último
+              ficheiro entregue.
             </p>
           </Reveal>
 
@@ -56,6 +57,7 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-5 lg:pl-8">
+          {stats.length > 0 ? (
           <dl className="grid grid-cols-2 gap-px bg-paper/10">
             {stats.map((stat, i) => (
               <Reveal
@@ -78,6 +80,7 @@ export default function About() {
               </Reveal>
             ))}
           </dl>
+          ) : null}
         </div>
       </div>
     </section>

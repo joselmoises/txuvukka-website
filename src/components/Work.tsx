@@ -1,20 +1,16 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { work } from "@/lib/content";
 
 /**
- * Placeholders gráficos gerados em CSS, estritamente a preto e branco.
- * Substitui cada `<div className="pattern">` por uma <Image /> quando houver
- * fotografia real dos projectos.
+ * Mais recente primeiro. `sort` é estável em JS, por isso projectos do mesmo
+ * ano mantêm a ordem em que aparecem no `content.ts` — é aí que se controla o
+ * desempate.
  */
-const patterns = [
-  "repeating-linear-gradient(90deg, #f4f4f2 0 1px, transparent 1px 12px)",
-  "repeating-linear-gradient(45deg, #f4f4f2 0 1px, transparent 1px 16px)",
-  "radial-gradient(#f4f4f2 1.2px, transparent 1.3px)",
-  "repeating-radial-gradient(circle at 50% 50%, #f4f4f2 0 1px, transparent 1px 20px)",
-  "repeating-linear-gradient(0deg, #f4f4f2 0 1px, transparent 1px 10px)",
-  "repeating-linear-gradient(135deg, #f4f4f2 0 1px, transparent 1px 9px), repeating-linear-gradient(45deg, #f4f4f2 0 1px, transparent 1px 9px)",
-];
+const recentesPrimeiro = [...work].sort(
+  (a, b) => Number(b.year) - Number(a.year),
+);
 
 export default function Work() {
   return (
@@ -34,30 +30,32 @@ export default function Work() {
 
       <div className="container-x mt-20">
         <ul className="grid gap-x-8 gap-y-16 md:grid-cols-2">
-          {work.map((project, i) => (
+          {recentesPrimeiro.map((project, i) => (
             <Reveal
-              key={project.title}
+              key={`${project.title}-${project.category}`}
               as="li"
               delay={(i % 2) * 90}
               className={i % 4 === 1 || i % 4 === 2 ? "md:mt-20" : ""}
             >
               <a href="#contacto" className="group block">
-                <div
-                  className={`relative overflow-hidden bg-ink-soft ${
-                    i % 3 === 0 ? "aspect-4/5" : "aspect-4/3"
-                  }`}
-                >
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 opacity-60 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:opacity-85"
-                    style={{
-                      backgroundImage: patterns[i % patterns.length],
-                      backgroundSize: i % patterns.length === 2 ? "14px 14px" : undefined,
-                    }}
+                {/* Sem proporção fixa: cada peça mantém o seu formato original
+                    (as publicações são 4:5, o stand é 4:3). Recortar tudo para
+                    o mesmo rectângulo cortava texto a meio das peças. */}
+                <div className="relative overflow-hidden bg-ink-soft">
+                  {/* Entra a preto e branco; ganha cor quando o visitante se
+                      interessa — mantém a página monocromática sem esconder o
+                      trabalho. */}
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} — ${project.category}`}
+                    placeholder="blur"
+                    sizes="(min-width: 768px) 45vw, 100vw"
+                    className="h-auto w-full grayscale transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-ink/80 via-ink/20 to-transparent" />
 
-                  <span className="absolute bottom-6 left-6 z-10 border border-paper/25 bg-ink/40 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-paper backdrop-blur-xs">
+                  {/* Fundo sólido em vez de gradiente: metade das peças tem
+                      fundo branco e um scrim escuro ficava com ar de nódoa. */}
+                  <span className="absolute bottom-5 left-5 z-10 bg-ink px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-paper">
                     {project.category}
                   </span>
 

@@ -4,22 +4,35 @@
  * não é preciso mexer nos componentes.
  */
 
+import anjeStand from "@/assets/trabalho/anje-stand.jpg";
+import idonioIdentidade from "@/assets/trabalho/idonio-identidade.jpg";
+import idonioInfografia from "@/assets/trabalho/idonio-infografia-avc.jpg";
+import laforneriaIdentidade from "@/assets/trabalho/laforneria-identidade.jpg";
+import morelifeMerch from "@/assets/trabalho/morelife-merchandising.jpg";
+import nexaIdentidade from "@/assets/trabalho/nexa-identidade.jpg";
+import prestigeDef from "@/assets/trabalho/prestige-def-hybrid.jpg";
+import prestigeOutubroRosa from "@/assets/trabalho/prestige-outubro-rosa.jpg";
+
+// Contactos retirados das peças de divulgação da própria TXUVUKKA
+// (ver Downloads/photo_...748100 e ...748105). Confirmar antes de publicar.
 export const site = {
   name: "TXUVUKKA",
   tagline: "Estúdio de Design e Publicidade",
-  // TODO: substituir pelos dados reais antes de publicar
-  email: "ola@txuvukka.co.mz",
-  phone: "+258 84 000 0000",
-  phoneHref: "+258840000000",
-  whatsapp: "https://wa.me/258840000000",
-  street: "Av. Julius Nyerere, 1234",
+  email: "geral@txuvukka.com",
+  emailAlt: "txuvukka@gmail.com",
+  phone: "+258 83 414 07 63",
+  phoneHref: "+258834140763",
+  whatsapp: "https://wa.me/258834140763",
+  website: "www.txuvukka.com",
+  street: "Av. Dom Alexandre, Mahotas, nº 1840",
   city: "Maputo",
   country: "Moçambique",
-  address: "Av. Julius Nyerere, 1234, Maputo — Moçambique",
+  address: "Av. Dom Alexandre, Mahotas, nº 1840, Maputo — Moçambique",
+  // TODO: confirmar o ano de fundação — não consta em nenhuma das peças.
   founded: "2016",
   social: [
     { label: "Instagram", href: "https://instagram.com/txuvukka" },
-    { label: "Behance", href: "https://behance.net/txuvukka" },
+    { label: "Facebook", href: "https://facebook.com/txuvukka" },
     { label: "LinkedIn", href: "https://linkedin.com/company/txuvukka" },
   ],
 } as const;
@@ -38,87 +51,135 @@ export const nav = [
   { label: "Contacto", href: "#contacto" },
 ] as const;
 
+/**
+ * Os cinco serviços que a TXUVUKKA anuncia no destaque «SERVIÇOS» do Instagram
+ * (ver a pasta WhatsApp). Os textos são adaptados dos originais — não foram
+ * inventados serviços que a empresa não presta.
+ *
+ * `wide: true` faz o cartão ocupar duas colunas, para a grelha de 5 fechar sem
+ * buracos no ecrã grande.
+ */
 export const services = [
   {
     number: "01",
-    title: "Identidade Visual",
+    title: "Design Gráfico",
     description:
-      "Construímos marcas do símbolo ao sistema completo: logótipo, tipografia, paleta, aplicações e manual de normas.",
-    items: ["Naming", "Logótipo", "Manual de marca", "Papelaria"],
+      "Unimos criatividade e estratégia para comunicar uma mensagem visualmente impactante. É aqui que ajudamos a moldar a percepção da sua marca — do logótipo aos materiais de marketing.",
+    items: ["Logótipos", "Materiais de marketing", "Identidade"],
   },
   {
     number: "02",
-    title: "Publicidade",
+    title: "Gestão de Redes Sociais",
     description:
-      "Campanhas que ocupam espaço e ficam na memória — do conceito à peça final, para exterior, imprensa e digital.",
-    items: ["Conceito criativo", "Outdoor", "Rádio e TV", "Imprensa"],
+      "Maximizamos a sua presença online. Criamos conteúdo estratégico, interagimos com o seu público e construímos uma comunidade fiel — mais visibilidade, engajamento e crescimento.",
+    items: ["Conteúdo estratégico", "Gestão de comunidade", "Calendário"],
   },
   {
     number: "03",
-    title: "Design Gráfico",
+    title: "Produção de Fotos e Vídeos",
     description:
-      "Peças impressas e digitais com hierarquia clara e execução precisa. O detalhe é o que separa o bom do esquecível.",
-    items: ["Editorial", "Embalagem", "Catálogos", "Sinalética"],
+      "Destaque-se dos concorrentes transformando a sua narrativa em imagens poderosas. A produção audiovisual cria ligações emocionais e impulsiona a visibilidade da marca.",
+    items: ["Fotografia", "Vídeo", "Produção audiovisual"],
   },
   {
     number: "04",
-    title: "Conteúdo Digital",
+    title: "Anúncios",
     description:
-      "Presença consistente nas redes: linha visual, calendário editorial e produção contínua de conteúdo.",
-    items: ["Social media", "Motion", "Fotografia", "Copywriting"],
+      "Com estratégias certeiras, conquistamos a atenção do seu público e levamos os seus produtos aos clientes — no digital, em eventos presenciais, em outdoors e na imprensa.",
+    items: ["Digital", "Outdoors", "Rádio e TV", "Jornal", "Eventos"],
   },
   {
     number: "05",
-    title: "Web & Interfaces",
+    title: "Printing",
     description:
-      "Websites e interfaces rápidas, acessíveis e alinhadas com a marca — desenhadas e construídas pela mesma equipa.",
-    items: ["Websites", "Landing pages", "UI/UX", "Manutenção"],
-  },
-  {
-    number: "06",
-    title: "Estratégia de Marca",
-    description:
-      "Antes da forma vem a decisão. Posicionamento, arquitectura de marca e tom de voz para orientar tudo o resto.",
-    items: ["Posicionamento", "Tom de voz", "Arquitectura", "Auditoria"],
+      "Uma variedade de serviços de impressão para a sua marca, do pequeno formato ao material de feira.",
+    items: [
+      "Estampagem",
+      "Bordado",
+      "Folhetos",
+      "Cartões de visita",
+      "Banners",
+      "Livros e revistas",
+      "Rollups",
+      "Gazebos",
+      "Teardrops",
+      "Backdrops",
+      "Bandeiras",
+      "Stickers",
+      "Vinil",
+      "Brindes personalizados",
+    ],
+    wide: true,
   },
 ] as const;
 
+/**
+ * Trabalho real do estúdio. As imagens vivem em `src/assets/trabalho/`,
+ * já redimensionadas (lado maior 1100px).
+ *
+ * ⚠️ OS ANOS SÃO TODOS ESTIMATIVAS MINHAS — CORRIGIR.
+ * Nenhuma das oito peças usadas traz data visível. Os posts do Idónio que vi
+ * na pasta Downloads tinham datas de 2026, mas não são estas duas peças (o
+ * logótipo e a infografia do AVC não têm data). A secção é ordenada do mais
+ * recente para o mais antigo a partir deste campo, por isso a ordem no site
+ * só fica certa depois de estes anos estarem certos.
+ */
 export const work = [
   {
-    title: "Mafalala Records",
-    category: "Identidade Visual",
+    title: "ANJE",
+    category: "Stand & Ativação",
     year: "2025",
-    note: "Sistema de marca para editora discográfica independente.",
+    note: "Stand de feira para a Associação Nacional de Jovens Empresários, do painel gráfico à sinalética do espaço.",
+    image: anjeStand,
   },
   {
-    title: "Costa do Sol",
+    title: "Idónio",
+    category: "Identidade Visual",
+    year: "2026",
+    note: "Marca do Centro de Saúde Idónio — símbolo, tipografia e assinatura «O maior aliado da saúde».",
+    image: idonioIdentidade,
+  },
+  {
+    title: "Grupo Prestige Solutions",
     category: "Campanha",
     year: "2025",
-    note: "Campanha de exterior e imprensa para rede de restauração.",
+    note: "Campanha de Outubro Rosa para o sector industrial, adaptada a redes sociais e materiais internos.",
+    image: prestigeOutubroRosa,
   },
   {
-    title: "Ncoana",
-    category: "Embalagem",
-    year: "2024",
-    note: "Linha de embalagem para produtos alimentares locais.",
+    title: "Morelife Gym",
+    category: "Marca & Merchandising",
+    year: "2025",
+    note: "Identidade do ginásio aplicada a vestuário e material de treino.",
+    image: morelifeMerch,
   },
   {
-    title: "Banco Meridiano",
-    category: "Editorial",
-    year: "2024",
-    note: "Relatório anual e sistema de infografia institucional.",
+    title: "Idónio",
+    category: "Infografia",
+    year: "2026",
+    note: "Série de peças de literacia em saúde — fatores de risco do AVC explicados para leitura rápida.",
+    image: idonioInfografia,
   },
   {
-    title: "Festival Xitende",
-    category: "Publicidade",
-    year: "2023",
-    note: "Identidade e comunicação integrada de festival de música.",
+    title: "La Forneria",
+    category: "Identidade Visual",
+    year: "2025",
+    note: "Marca para padaria e pastelaria, com símbolo da espiga e do forno integrados no logótipo.",
+    image: laforneriaIdentidade,
   },
   {
-    title: "Zambeze Log",
-    category: "Web & Marca",
-    year: "2023",
-    note: "Reposicionamento e website para operador logístico.",
+    title: "Prestige Solutions",
+    category: "Catálogo de Produto",
+    year: "2025",
+    note: "Fichas de produto para equipamento de protecção individual, num sistema aplicável a toda a gama.",
+    image: prestigeDef,
+  },
+  {
+    title: "nexa.",
+    category: "Identidade Visual",
+    year: "2026",
+    note: "Logótipo geométrico de traço contínuo, desenhado para funcionar a qualquer escala.",
+    image: nexaIdentidade,
   },
 ] as const;
 
@@ -149,6 +210,16 @@ export const process = [
   },
 ] as const;
 
+/**
+ * ⚠️ NÚMEROS POR CONFIRMAR — NÃO PUBLICAR ASSIM.
+ *
+ * Estes valores foram inventados como marcadores de posição quando o site
+ * ainda não tinha conteúdo real. Não há nada nos materiais fornecidos que os
+ * sustente. Substituir pelos números verdadeiros ou apagar a secção inteira
+ * (a grelha em `About.tsx` desaparece sozinha se este array ficar vazio).
+ *
+ * O mesmo se aplica a `site.founded`, usado no hero como «desde 2016».
+ */
 export const stats = [
   { value: "120+", label: "Projectos entregues" },
   { value: "48", label: "Marcas acompanhadas" },

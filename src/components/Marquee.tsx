@@ -1,12 +1,12 @@
 const words = [
-  "Identidade Visual",
-  "Publicidade",
   "Design Gráfico",
-  "Embalagem",
-  "Motion",
-  "Web",
-  "Editorial",
-  "Sinalética",
+  "Redes Sociais",
+  "Fotografia",
+  "Vídeo",
+  "Anúncios",
+  "Outdoors",
+  "Printing",
+  "Brindes",
 ];
 
 export default function Marquee() {

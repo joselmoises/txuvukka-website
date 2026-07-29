@@ -43,3 +43,13 @@ next-env.d.ts
 # ficheiros-fonte da marca do cliente (.ai/.pdf) — ficam fora do repositório.
 # O logótipo usado pelo site está em src/components/Logo.tsx e public/txuvukka-logo.svg
 /brand/
+
+# originais do portfólio, em alta resolução. As versões usadas pelo site estão
+# redimensionadas em src/assets/trabalho/
+/Downloads/
+/Downloads.rar
+
+# capturas das stories do Instagram, usadas só como fonte para os textos dos
+# serviços em src/lib/content.ts
+/WhatsApp*/
+/WhatsApp*.zip
