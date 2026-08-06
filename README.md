@@ -31,12 +31,15 @@ src/app/
   globals.css             tokens de tema, utilitários e animações
   icon.svg                favicon
 src/lib/content.ts        TODO o conteúdo editorial do site
+src/assets/trabalho/      imagens do portfólio (importadas por content.ts)
 src/components/
   Logo.tsx                wordmark em SVG inline (usa currentColor)
+  Monogram.tsx            símbolo K•K, usado como marca de água
   Header.tsx              navegação fixa + menu móvel
-  Hero.tsx                Marquee.tsx     Services.tsx
-  Work.tsx                Process.tsx     About.tsx
-  Contact.tsx             ContactForm.tsx Footer.tsx
+  Services.tsx            secção; ServicesBand.tsx faz a faixa de painéis
+  Hero.tsx                Marquee.tsx     Work.tsx
+  Process.tsx             About.tsx       Contact.tsx
+  ContactForm.tsx         Footer.tsx
   SectionHeading.tsx      Reveal.tsx (animação ao scroll)
 src/app/api/health/       sonda de saúde para o Docker/NPM
 ```

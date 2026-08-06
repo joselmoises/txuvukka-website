@@ -1,12 +1,10 @@
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
-import ServiceCard from "./ServiceCard";
-import { services } from "@/lib/content";
+import ServicesBand from "./ServicesBand";
 
 /**
- * A frente dos cartões replica a composição das stories «SERVIÇOS» da própria
- * TXUVUKKA: monograma K•K em marca de água e disco em relevo com o nome do
- * serviço. O verso, invertido a preto, traz a descrição — ver `ServiceCard`.
+ * Os cinco serviços numa faixa contínua de painéis, em vez de uma grelha —
+ * ver `ServicesBand` para o mecanismo.
  */
 export default function Services() {
   return (
@@ -22,20 +20,9 @@ export default function Services() {
         intro="Cinco frentes de trabalho. Passe o cursor sobre cada uma — ou toque — para ver o que inclui."
       />
 
-      <ul className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, i) => (
-          <Reveal
-            key={service.number}
-            as="li"
-            delay={i * 70}
-            className={
-              "wide" in service && service.wide ? "sm:col-span-2" : undefined
-            }
-          >
-            <ServiceCard service={service} />
-          </Reveal>
-        ))}
-      </ul>
+      <Reveal>
+        <ServicesBand />
+      </Reveal>
     </section>
   );
 }

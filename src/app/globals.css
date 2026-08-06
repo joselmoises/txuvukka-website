@@ -169,56 +169,6 @@
   animation: marquee 32s linear infinite;
 }
 
-/* ---------------------------------------------------------------------------
-   Cartões de serviço: rotação de 180° sobre o eixo vertical, com peso.
-   O `translateZ` negativo a meio faz o cartão afastar-se do visitante enquanto
-   passa pela aresta — é o que distingue isto de uma rodagem plana. Tem de ser
-   `@keyframes` e não `transition`, porque uma transição interpola em linha
-   recta entre o início e o fim e nunca passaria por um ponto intermédio.
---------------------------------------------------------------------------- */
-@keyframes virar-cartao {
-  0% {
-    transform: translateZ(0) rotateY(0deg);
-  }
-  50% {
-    transform: translateZ(-120px) rotateY(90deg);
-  }
-  100% {
-    transform: translateZ(0) rotateY(180deg);
-  }
-}
-
-@keyframes voltar-cartao {
-  0% {
-    transform: translateZ(0) rotateY(180deg);
-  }
-  50% {
-    transform: translateZ(-120px) rotateY(90deg);
-  }
-  100% {
-    transform: translateZ(0) rotateY(0deg);
-  }
-}
-
-/* Escurece as faces enquanto o cartão passa pela aresta e volta a clarear. */
-@keyframes aresta-escura {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.6;
-  }
-}
-
-.animate-virar {
-  animation: virar-cartao 900ms cubic-bezier(0.5, 0, 0.2, 1) forwards;
-}
-
-.animate-voltar {
-  animation: voltar-cartao 900ms cubic-bezier(0.5, 0, 0.2, 1) forwards;
-}
-
-.animate-aresta {
-  animation: aresta-escura 900ms cubic-bezier(0.5, 0, 0.2, 1) forwards;
-}
+/* Os cartões de serviço que rodavam 180° foram substituídos pela faixa de
+   painéis (`ServicesBand.tsx`), que só precisa de transições — os `@keyframes`
+   da rotação saíram com eles. Estão no histórico do git, se fizerem falta. */

@@ -49,7 +49,7 @@ next-env.d.ts
 /Downloads/
 /Downloads.rar
 
-# capturas das stories do Instagram, usadas só como fonte para os textos dos
-# serviços em src/lib/content.ts
-/WhatsApp*/
-/WhatsApp*.zip
+# material de referência recebido por WhatsApp — capturas das stories do
+# Instagram (fonte dos textos em src/lib/content.ts) e referências visuais
+# enviadas pelo cliente. Nada disto pertence ao repositório.
+/WhatsApp*

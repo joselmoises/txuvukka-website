@@ -56,13 +56,16 @@ export const nav = [
  * (ver a pasta WhatsApp). Os textos são adaptados dos originais — não foram
  * inventados serviços que a empresa não presta.
  *
- * `wide: true` faz o cartão ocupar duas colunas, para a grelha de 5 fechar sem
- * buracos no ecrã grande.
+ * `claim` é a frase curta que aparece em grande no painel aberto da faixa de
+ * serviços — uma por serviço, todas na mesma construção (verbo na 1ª pessoa do
+ * plural + complemento), para a faixa ler como uma só voz à medida que se
+ * percorrem os painéis.
  */
 export const services = [
   {
     number: "01",
     title: "Design Gráfico",
+    claim: "Damos forma à ideia.",
     description:
       "Unimos criatividade e estratégia para comunicar uma mensagem visualmente impactante. É aqui que ajudamos a moldar a percepção da sua marca — do logótipo aos materiais de marketing.",
     items: ["Logótipos", "Materiais de marketing", "Identidade"],
@@ -70,6 +73,7 @@ export const services = [
   {
     number: "02",
     title: "Gestão de Redes Sociais",
+    claim: "Mantemos a conversa viva.",
     description:
       "Maximizamos a sua presença online. Criamos conteúdo estratégico, interagimos com o seu público e construímos uma comunidade fiel — mais visibilidade, engajamento e crescimento.",
     items: ["Conteúdo estratégico", "Gestão de comunidade", "Calendário"],
@@ -77,6 +81,7 @@ export const services = [
   {
     number: "03",
     title: "Produção de Fotos e Vídeos",
+    claim: "Contamos a história em imagem.",
     description:
       "Destaque-se dos concorrentes transformando a sua narrativa em imagens poderosas. A produção audiovisual cria ligações emocionais e impulsiona a visibilidade da marca.",
     items: ["Fotografia", "Vídeo", "Produção audiovisual"],
@@ -84,6 +89,7 @@ export const services = [
   {
     number: "04",
     title: "Anúncios",
+    claim: "Levamos a mensagem lá fora.",
     description:
       "Com estratégias certeiras, conquistamos a atenção do seu público e levamos os seus produtos aos clientes — no digital, em eventos presenciais, em outdoors e na imprensa.",
     items: ["Digital", "Outdoors", "Rádio e TV", "Jornal", "Eventos"],
@@ -91,6 +97,7 @@ export const services = [
   {
     number: "05",
     title: "Printing",
+    claim: "Pomos a marca em papel.",
     description:
       "Uma variedade de serviços de impressão para a sua marca, do pequeno formato ao material de feira.",
     items: [
@@ -109,7 +116,6 @@ export const services = [
       "Vinil",
       "Brindes personalizados",
     ],
-    wide: true,
   },
 ] as const;
 
